@@ -41,27 +41,27 @@
     <ul class="pagination justify-content-center">
         {% if contatos.has_previous %}
         <li class="page-item active">
-            <a class="page-link" href="?p={{ contatos.previous_page_number }}"> < </a>
+            <a class="page-link" href="?p={{ contatos.previous_page_number }}&termo={{ request.GET.termo }}"> < </a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" href="?p={{pagina}}"> < </a>
+            <a class="page-link" href="?p={{pagina}}&termo={{ request.GET.termo }}"> < </a>
         </li>
         {% endif %}
         {%for pagina in contatos.paginator.page_range%}
         {% if contatos.number == pagina %}
         <li class="page-item active" aria-current="page">
-            <a class="page-link" href=="?p={{pagina}}">{{pagina}}<span class="sr-only">(current)</span></a>
+            <a class="page-link" href="?p={{pagina}}&termo={{ request.GET.termo }}">{{pagina}}<span class="sr-only">(current)</span></a>
         </li>
         {% elif pagina > contatos.number|add:-3 and pagina < contatos.number|add:3  %}
         <li class="page_item">
-            <a class="page-link" href ="?p={{pagina}}">{{pagina}}</a>
+            <a class="page-link" href ="?p={{pagina}}&termo={{ request.GET.termo }}">{{pagina}}</a>
         </li>
         {% endif %}
         {% endfor %}
         {% if contatos.has_next %}
         <li class="page-item active">
-            <a class="page-link" href="?p={{ contatos.next_page_number }}"> > </a></li>
+            <a class="page-link" href="?p={{ contatos.next_page_number }}&termo={{ request.GET.termo }}"> > </a></li>
         {% else %}
         <li class="page-item disabled"></li>
         <li class="page-link"> > </li>
