@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('<int:contato_id>', views.pg_contato, name='pg_contato'),
 ]

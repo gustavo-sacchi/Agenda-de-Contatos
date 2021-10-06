@@ -24,6 +24,7 @@ class Contato(models.Model):
                                 ('1', 'Amigos'),
                                 ('2', 'Família'),
                             ))
+    mostrar = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nome
