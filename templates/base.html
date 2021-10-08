@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Meus Contatos</title>
+    <title>{% block titulo %}{% endblock %} Meus Contatos</title>
 
     {% include 'parciais/_head.html' %}
 
@@ -75,7 +75,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Addons
+            Opções
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -87,9 +87,8 @@
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="#">Login</a>
-                    <a class="collapse-item" href="#">Logout</a>
-                    <a class="collapse-item" href="#">Registrar</a>
+                    <a class="collapse-item" href="{% url 'login' %}">Login</a>
+                    <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
                     <a class="collapse-item" href="#">Esqueci Minha Senha</a>
                 </div>
             </div>
@@ -146,30 +145,22 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ahh... Já vai?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Saiba que ficaremos com saudades espero que você volte em breve!</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="{% static 'vendor/js/sb-admin-2.min.js'%}"></script>
-
+{% include 'parciais/_scripts_end.html' %}
 
 </body>
 

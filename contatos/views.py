@@ -4,7 +4,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q, Value
 from django.db.models.functions import Concat
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
+
+@login_required(login_url='login')
 def index(request):
     try:
 
@@ -31,6 +34,7 @@ def index(request):
         return render(request, 'contatos/404.html')
 
 
+@login_required(login_url='login')
 def pg_contato(request, contato_id):
     try:
         contato = Contato.objects.get(id=contato_id)
@@ -46,6 +50,7 @@ def pg_contato(request, contato_id):
         return render(request, 'contatos/404.html')
 
 
+@login_required(login_url='login')
 def busca(request):
     try:
         ### pegando valor da pagina
