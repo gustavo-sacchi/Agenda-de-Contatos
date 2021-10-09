@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import  User
 from django.contrib.auth.decorators import login_required
-from .models import FormContato
+from .models import FormContato, UserPersonalizado as User
+
 
 def login(request):
     if request.method != 'POST':
@@ -100,3 +101,13 @@ def dashboard(request):
     form.save()
     messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso!')
     return redirect('dashboard')
+
+
+# def perfil_user(request):
+#     usuario_info = User.objects
+#     print(usuario_info)
+#     dir(usuario_info)
+#     return render(request, 'usuarios/perfil_user.html')
+
+def perfil_user(request):
+    pass
