@@ -38,7 +38,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
+        <!-- Nav Item - Inicio -->
         <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">
                 <i class="fas fa-fw fa-list-alt"></i>
@@ -83,10 +83,11 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Configurações</span>
+                <span>Gerenciamento</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{% url 'dashboard' %}">Cadastrar Contato</a>
                     <a class="collapse-item" href="{% url 'login' %}">Login</a>
                     <a class="collapse-item" href="{% url 'logout' %}">Logout</a>
                     <a class="collapse-item" href="#">Esqueci Minha Senha</a>
